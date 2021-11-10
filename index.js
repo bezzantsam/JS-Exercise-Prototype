@@ -67,7 +67,15 @@ Person.prototype.toString = function () {
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
-function Car() {}
+function Car(model, mpg) {
+  this.model = model;
+  this.milesPerGallon = mpg;
+  this.tank = 0;
+  this.odometer = 0;
+}
+Car.prototype.fill = function (gallons) {
+  this.tank = this.tank + gallons;
+};
 
 /*
   TASK 3
@@ -81,11 +89,12 @@ function Baby() {}
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
-*/
+Instance 1 : Global binding: global scope value of "this" will be the window/console object.
+Instance 2: Implicit binding: Whenever a function is preceded by a dot, the object to the left of the dot gets "this", I suppose this is implied by the dot. The . is object notation therefor the object becomes the "this"
+Instance 3: New binding:  constructor functions are the example. This refers to the specific instance of the object created and returned by the constructor function.
+Instance 4: Explicit binding: Whenever Javascript call or apply method is used, THIS is explicitly defined. 
+
+ */
 
 ///////// END OF CHALLENGE /////////
 
